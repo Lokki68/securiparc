@@ -1,0 +1,2 @@
+- flash.each do |key, value|
+  = rended AlertComponent.new(title: 'alert', message: value, level: key)

@@ -8,7 +8,7 @@
   @apply flex items-center rounded-lg overflow-hidden ;
 
   .nav-link {
-    @apply flex items-center w-full px-4 py-1 gap-x-2 hover:bg-gray-300/25 hover: font-semi-bold ;
+    @apply flex items-center w-full px-4 py-1 gap-x-2 hover:bg-gray-300/25 hover:font-semibold ;
     
     &.menu-active {
       @apply bg-gray-300/25 font-semibold;

@@ -18,5 +18,6 @@
   %body{class: 'flex h-screen bg-gray-50 overflow-hidden'}
     = render partial: 'shared/sidebar'
     %main{class: 'h-full overflow-y-auto'}
+      = render partial: 'shared/flash'
       %div{class: 'container grid px-6 mx-auto'}
         = yield

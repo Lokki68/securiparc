@@ -60,3 +60,5 @@ gem "html2haml", "~> 2.3"
 gem 'view_component'
 
 gem "devise", "~> 4.9"
+
+gem "data_migrate", "~> 11.2"
