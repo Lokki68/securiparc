@@ -6,4 +6,5 @@
       %ul.flex.flex-col.px-2.gap-y-2
         = render NavitemComponent.new(title: 'dashboard', icon: 'fas fa-tachometer-alt', path: root_path, active: controller_name == 'dashboard')
   .user-container.mt-auto
-    %p user
+    - if current_user
+      %p= current_user.full_name

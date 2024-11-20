@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_19_164906) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_20_122510) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
+
+  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -29,7 +32,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_19_164906) do
     t.bigint "role_id", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "status"
+    t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
