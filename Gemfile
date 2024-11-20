@@ -65,3 +65,6 @@ gem 'view_component'
 gem 'devise', '~> 4.9'
 
 gem 'data_migrate', '~> 11.2'
+
+gem 'simple_form'
+gem 'simple_form-tailwind'
