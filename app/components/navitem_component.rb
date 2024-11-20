@@ -6,6 +6,5 @@ class NavitemComponent < ViewComponent::Base
     @title = title
     @active = active && 'menu-active'
     @icon = icon
-
   end
 end

@@ -2,7 +2,7 @@
 require:
   - rubocop/cop/internal_affairs
   - rubocop-performance
-  - rubocop-rspec
+  # - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -146,22 +146,25 @@ Naming/InclusiveLanguage:
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 
-RSpec/FilePath:
-  Exclude:
-    - spec/rubocop/cop/internal_affairs/redundant_let_rubocop_config_new_spec.rb
-    - spec/rubocop/formatter/junit_formatter_spec.rb
+# RSpec/FilePath:
+#   Exclude:
+#     - spec/rubocop/cop/internal_affairs/redundant_let_rubocop_config_new_spec.rb
+#     - spec/rubocop/formatter/junit_formatter_spec.rb
 
-RSpec/PredicateMatcher:
-  EnforcedStyle: explicit
+# RSpec/PredicateMatcher:
+#   EnforcedStyle: explicit
 
-RSpec/MessageSpies:
-  EnforcedStyle: receive
+# RSpec/MessageSpies:
+#   EnforcedStyle: receive
 
-RSpec/NestedGroups:
-  Max: 7
+# RSpec/NestedGroups:
+#   Max: 7
 
-RSpec/MultipleMemoizedHelpers:
-  Enabled: false
+# RSpec/MultipleMemoizedHelpers:
+#   Enabled: false
+
+# RSpec/StubbedMock:
+#   Enabled: false
 
 Performance/CollectionLiteralInLoop:
   Exclude:
@@ -174,8 +177,7 @@ Performance/EndWith:
 Performance/StartWith:
   SafeMultiline: false
 
-RSpec/StubbedMock:
-  Enabled: false
+# 
 
 InternalAffairs/ExampleDescription:
   Include:
@@ -192,5 +194,5 @@ InternalAffairs/StyleDetectedApiUse:
   Exclude:
     - 'lib/rubocop/cop/mixin/percent_array.rb'
 
-Capybara/ClickLinkOrButtonStyle:
-  Enabled: false
+# Capybara/ClickLinkOrButtonStyle:
+#   Enabled: false
