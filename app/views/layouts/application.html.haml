@@ -18,7 +18,7 @@
   %body{class: 'flex h-screen bg-gray-50 overflow-hidden'}
     = render partial: 'shared/sidebar'
     %main{class: 'h-full flex-1 overflow-y-auto'}
-      = render partial: 'shared/top_header'
+      = render partial: 'shared/top_header' if current_user
       = render partial: 'shared/flash'
       %div{class: 'container grid px-6 mx-auto'}
         = yield

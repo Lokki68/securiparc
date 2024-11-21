@@ -2,4 +2,4 @@
   .items-center 
     %p= 'avatar'
   .items-center
-    = link_to 'Logout', destroy_user_session_path, data: {turbo_method: :delete}, class: 'inline-block px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-500'
+    = render partial: 'shared/top_header/log_container'
