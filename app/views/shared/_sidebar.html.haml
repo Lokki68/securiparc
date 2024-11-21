@@ -1,9 +1,9 @@
-%aside{class: 'z-30 flex flex-col justify-start w-64 overflow-y-auto bg-white '}
+%aside{class: 'd-flex flex-column flex-shrink-0 p-3 text-white bg-dark '}
   .py-4.text-gray-500 
     = link_to 'SecuriParc', root_path, class: 'ml-6 text-lg font-bold text-gray-800'
 
     %nav.mt-2
-      %ul.flex.flex-col.px-2.gap-y-2
+      %ul.nav.nav-pills.flex-column.mb-auto
         = render NavitemComponent.new(title: 'Tableau de Bord', icon: 'fas fa-tachometer-alt', path: root_path, active: controller_name == 'dashboard')
         = render NavitemComponent.new(title: 'Utilisateurs', icon: 'fas fa-users', path: users_path, active: controller_name == 'users')
   %div{class: 'flex items-center justify-center p-4 shadow-inner  mt-auto'}

@@ -1,25 +1,29 @@
-.flex.flex-col.gap-5
-  .card 
+.container-fluid
+  .card.my-2
     .card-header 
-      %p Recherche
+      %p.fs-3 Recherche
     .card-body 
       = search_form_for @q, url: users_path, html: {method: :get}, defaults: {required: false}, builder: SimpleForm::FormBuilder do |f|
-        .flex.justify-around
-          = f.input :first_name_cont, label: false, input_html: {type: 'text'}, placeholder: 'first_name' 
-          = f.input :last_name_cont, label: false, input_html: {type: 'text'}, placeholder: 'last_name' 
-          = f.input :role_name_eq, label: false, as: :select, collection: Role.all.map(&:name), prompt: 'Role'
+        .row
+          .col-4
+            = f.input :first_name_cont, label: false, input_html: {type: 'text'}, placeholder: 'first_name' 
+          .col-4
+            = f.input :last_name_cont, label: false, input_html: {type: 'text'}, placeholder: 'last_name' 
+          .col-4
+            = f.input :role_name_eq, label: false, as: :select, collection: Role.all.map(&:name), prompt: 'Role'
         .flex.items-end.justify-end.mt-4
-          .flex.items-center.gap-2 
-            %a{class: 'btn btn-outline', href: users_path } annuler
-            = f.submit 'recherche', class: 'btn btn-contain'
+          .d-flex.align-items-center.justify-content-end.gap-2 
+            %a{class: 'btn btn-outline-primary btn-sm', href: users_path } annuler
+            = f.submit 'recherche', class: 'btn btn-primary btn-sm'
     
 
-  .card
+  .card.my-2
     .card-header
-      %h1 Utilisateurs
-      = render IconButtonComponent.new(title: 'Ajouter', path: new_user_path, icon: 'fas fa-plus')
+      .d-flex.align-items-center.justify-content-between
+        %h1.fs-3 Utilisateurs
+        = render IconButtonComponent.new(title: 'Ajouter', path: new_user_path, icon: 'fas fa-plus')
     .card-body 
-      %table.table-custom
+      %table.table.table-striped.table-hover
         %thead
           %tr
             %td= sort_link @q, :id, 'id'

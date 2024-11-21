@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def edit
     authorize! :update, User
   end
-  
+
   def create
     authorize! :create, User
     @user = User.new permit_params
@@ -49,9 +49,7 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-
-
-  private 
+  private
 
   def find_model
     @user = User.find params[:id]
@@ -60,5 +58,4 @@ class UsersController < ApplicationController
   def permit_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :role_id)
   end
-
 end

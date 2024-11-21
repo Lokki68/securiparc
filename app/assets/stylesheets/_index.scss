@@ -1,0 +1,8 @@
+@import "./component/reset";
+@import "./component/variables";
+@import "./component/mixins";
+@import "./component/base";
+
+body {
+  height: 100vh;
+}

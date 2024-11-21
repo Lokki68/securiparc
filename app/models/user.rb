@@ -25,7 +25,7 @@ class User < ApplicationRecord
     %w[created_at email encrypted_password first_name id id_value last_name remember_created_at reset_password_sent_at reset_password_token role_id status updated_at]
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(_auth_object = nil)
     %w[role]
   end
 
