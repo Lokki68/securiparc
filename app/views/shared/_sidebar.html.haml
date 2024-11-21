@@ -4,7 +4,8 @@
 
     %nav.mt-2
       %ul.flex.flex-col.px-2.gap-y-2
-        = render NavitemComponent.new(title: 'dashboard', icon: 'fas fa-tachometer-alt', path: root_path, active: controller_name == 'dashboard')
-  .user-container.mt-auto
+        = render NavitemComponent.new(title: 'Tableau de Bord', icon: 'fas fa-tachometer-alt', path: root_path, active: controller_name == 'dashboard')
+        = render NavitemComponent.new(title: 'Utilisateurs', icon: 'fas fa-users', path: users_path, active: controller_name == 'users')
+  %div{class: 'flex items-center justify-center p-4 shadow-inner  mt-auto'}
     - if current_user
       %p= current_user.full_name

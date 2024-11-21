@@ -1,0 +1,6 @@
+.card
+  .card-header 
+    %h1 Nouvel Utilisateur
+  .card-body
+    = simple_form_for @user, url: users_path, data: {turbo: false} do |f|
+      != render partial: 'form', locals: { f:f }
