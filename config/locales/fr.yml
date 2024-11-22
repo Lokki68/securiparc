@@ -29,3 +29,6 @@
 
 fr:
   hello: "Bonjour Monde"
+  action:
+    once: Action
+    more: Actions

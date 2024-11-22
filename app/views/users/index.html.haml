@@ -26,10 +26,9 @@
       %table.table.table-striped.table-hover.align-middle
         %thead
           %tr
-            %td= sort_link @q, :id, 'id'
-            %td= sort_link @q, :first_name, 'first_name'
-            %td= sort_link @q, :last_name, 'last_name'
-            %td= sort_link @q, :role_name, 'role'
-            %td= 'Actions'
+            %td= sort_link @q, :first_name, t('activerecord.attributes.user.first_name')
+            %td= sort_link @q, :last_name, t('activerecord.attributes.user.last_name')
+            %td= sort_link @q, :role_name, t('activerecord.attributes.user.role')
+            %td.text-end= t('action.once')
         %tbody#Users
           != render partial: 'user', collection: @users
