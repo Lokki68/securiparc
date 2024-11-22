@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :password, length: { minimum: 6 }, if: :password_required?
+  validates :password_confirmation, length: { minimum: 6 }, if: :password_required?
 
   state_machine :status, initial: :active do
     event :deactivate do
@@ -39,5 +41,9 @@ class User < ApplicationRecord
 
   def role?(name)
     role && role.name == name
+  end
+
+  def password_required?
+    false || password.present?
   end
 end

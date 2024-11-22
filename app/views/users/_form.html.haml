@@ -16,10 +16,10 @@
     .d-flex.gap-4
       .d-flex.flex-column
         = f.label :password
-        = f.input :password, label: false
+        = f.input :password, required: false, label: false
       .d-flex.flex-column 
         = f.label :password_confirmation
-        = f.input :password_confirmation, label: false
+        = f.input :password_confirmation, required: false, label: false
 
 .d-flex.justify-content-between.align-items-center.px-5.flex-wrap
   .d-flex.flex-column 

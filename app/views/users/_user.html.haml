@@ -4,6 +4,11 @@
   %td= user.role.name
   %td
     .d-flex.justify-content-end.gap-3
-      = render ActiveButtonComponent.new(status: user.status , activate_action: activate_user_path(user) , deactivate_action: deactivate_user_path(user))
-      = render IconButtonComponent.new(title: 'Modifier', path: edit_user_path(user), icon: 'bi bi-pencil')
-      = render IconButtonComponent.new(title: 'Supprimer', path: user_path(user), icon: 'bi bi-trash text-danger ', delete: true)
+      - if can? :read, user
+        = render IconButtonComponent.new(title: 'Voir', path: user_path(user), icon: 'bi bi-eye')
+      - if can? :activate, user
+        = render ActiveButtonComponent.new(status: user.status , activate_action: activate_user_path(user) , deactivate_action: deactivate_user_path(user))
+      - if can? :update, user
+        = render IconButtonComponent.new(title: 'Modifier', path: edit_user_path(user), icon: 'bi bi-pencil')
+      - if can? :destroy, user
+        = render IconButtonComponent.new(title: 'Supprimer', path: user_path(user), icon: 'bi bi-trash text-danger ', delete: true)

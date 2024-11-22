@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  load_and_authorize_resource
   before_action :find_model, except: %w[index new create]
 
   def index
@@ -9,16 +10,13 @@ class UsersController < ApplicationController
   end
 
   def new
-    authorize! :create, User
     @user = User.new
   end
 
   def edit
-    authorize! :update, User
   end
 
   def create
-    authorize! :create, User
     @user = User.new permit_params
 
     if @user.save
@@ -30,8 +28,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    authorize! :update, User
-
     if @user.update permit_params
       flash[:success] = 'Utilisateur modifié'
       redirect_to users_path
@@ -41,19 +37,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    authorize! :destroy, User
     flash[:success] = 'Utilisateur supprimé' if @user.destroy
     redirect_to users_path
   end
 
   def activate
-    authorize! :update, User
     flash[:success] = 'Utilisateur activé' if @user.activate
     redirect_to users_path
   end
 
   def deactivate
-    authorize! :update, User
     flash[:success] = 'Utilisateur desactivé' if @user.deactivate
     redirect_to users_path
   end
