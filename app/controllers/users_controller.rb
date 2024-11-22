@@ -29,7 +29,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    authorize! :update, User
+
+    if @user.update permit_params
+      flash[:success] = 'Utilisateur modifié'
+      redirect_to users_path
+    else
+      render :edit
+    end
+  end
 
   def destroy
     authorize! :destroy, User

@@ -23,7 +23,7 @@
         %h1.fs-3 Utilisateurs
         = render IconButtonComponent.new(title: 'Ajouter', path: new_user_path, icon: 'fas fa-plus')
     .card-body 
-      %table.table.table-striped.table-hover
+      %table.table.table-striped.table-hover.align-middle
         %thead
           %tr
             %td= sort_link @q, :id, 'id'

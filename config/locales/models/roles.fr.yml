@@ -1,0 +1,15 @@
+fr:
+  activerecord:
+    models:
+      role:
+        one: Rôle
+        other: Rôles
+    attributes:
+      role:
+        id: ID
+        name: Nom
+    values:
+      roles:
+        name:
+          Admin: Administrateur
+          sapeur: Sapeur

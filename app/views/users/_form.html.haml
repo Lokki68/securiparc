@@ -1,11 +1,31 @@
-= f.input :email
-.grid.grid-cols-2.gap-4
-  = f.input :first_name
-  = f.input :last_name
-.grid.grid-cols-2.gap-4
-  = f.input :password
-  = f.input :password_confirmation
-= f.input :role_id, as: :select, collection: Role.all.map(&:name)
-.flex.justify-end.items-center.mt-4
-  = link_to 'Annuler', users_path, class: 'btn btn-outline'
-  = f.submit 'Enregistrer', class: 'btn btn-contain'
+- if @user.new_record?  
+  = f.input :password, as: :hidden, input_html: { value: 'Abcd1234!'}
+  = f.input :password_confirmation, as: :hidden, input_html: { value: 'Abcd1234!'}
+
+.d-flex.justify-content-around.flex-wrap
+  .d-flex.flex-column
+    = f.label :email
+    = f.input :email, label: false
+  .d-flex.flex-column
+    = f.label :first_name
+    = f.input :first_name, label: false
+  .d-flex.flex-column
+    = f.label :last_name
+    = f.input :last_name, label: false
+  - if @user.persisted?
+    .d-flex.gap-4
+      .d-flex.flex-column
+        = f.label :password
+        = f.input :password, label: false
+      .d-flex.flex-column 
+        = f.label :password_confirmation
+        = f.input :password_confirmation, label: false
+
+.d-flex.justify-content-between.align-items-center.px-5.flex-wrap
+  .d-flex.flex-column 
+    = f.label :role_id
+    = f.input :role_id, as: :select, label: false, collection: Role.all.map{ |r| [t("activerecords.values.roles.name.#{r.name}"), r.id]}
+
+  .d-flex.align-items-center.gap-2
+    = link_to 'Annuler', users_path, class: 'btn btn-outline-secondary btn-sm'
+    = f.submit 'Enregistrer', class: 'btn btn-primary btn-sm'

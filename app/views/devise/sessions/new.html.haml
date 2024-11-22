@@ -1,19 +1,17 @@
-.container.col-4.py-5
+.container.py-5.col-lg-4
   .card.shadow
     .card-header
       %h1.fs-3.fw-semibold Se Connecter
     .card-body
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .row 
-          .col-6
-            = f.input :email, required: false, label: false, autofocus: true,input_html: { autocomplete: "email", placeholder: 'Email' }
-          .col-6
-            = f.input :password,required: false, label: false,input_html: { autocomplete: "current-password", placeholder: 'Mot de passe' }
-        -# .row
-        -#   = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+        .d-flex.flex-column.align-items-center
+          .d-flex.flex-column
+            = f.label :email
+            = f.input :email, required: true, placeholder: 'email@exemple.com', label: false
+          .d-flex.flex-column
+            = f.label :password
+            = f.input :password, required: true, label: false
         .row.mt-4
           = f.button :submit, "Se connecter", class: 'btn btn-primary btn-sm'
 
-    .card-footer
-      .d-flex.justify-content-center.align-items-center.gap-3
-        = render "devise/shared/links"
+    

@@ -1,0 +1,6 @@
+.card 
+  .card-header
+    %h1.fs-3 Modifier l'utilisateur
+  .card-body
+    = simple_form_for @user, url: user_path(@user), data: {turbo: false} do |f|
+      != render partial: 'form', locals: { f:f }
