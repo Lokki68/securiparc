@@ -1,0 +1,5 @@
+.card-header 
+  .d-flex.align-items-center.justify-content-between
+    %h1.fs-3= title
+    - if local_assigns[:header_cta]
+      = yield

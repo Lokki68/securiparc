@@ -1,9 +1,7 @@
 .card 
-  .card-header
-    .d-flex.align-items-center.justify-content-between
-      .h1.fs-3= @user.full_name
-      - if can? :update, User
-        = render IconButtonComponent.new(title: 'Modifier', path: edit_user_path(@user), icon: 'bi bi-pencil')
+  = render 'shared/card/card_header', title: 'Utilisateur', header_cta: true do
+    - if can? :update, User
+      = render IconButtonComponent.new(title: 'Modifier', path: edit_user_path(@user), icon: 'bi bi-pencil')
   .card-body
     %table.table.table-striped.table-hover
       %tr

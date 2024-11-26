@@ -1,7 +1,6 @@
 .container-fluid
   .card.my-2
-    .card-header 
-      %p.fs-3 Recherche
+    = render 'shared/card/card_header', title: 'Rechercher'
     .card-body 
       = search_form_for @q, url: users_path, html: {method: :get}, defaults: {required: false}, builder: SimpleForm::FormBuilder do |f|
         .row
@@ -18,10 +17,8 @@
     
 
   .card.my-2
-    .card-header
-      .d-flex.align-items-center.justify-content-between
-        %h1.fs-3 Utilisateurs
-        = render IconButtonComponent.new(title: 'Ajouter', path: new_user_path, icon: 'fas fa-plus')
+    = render 'shared/card/card_header', title: 'Utilisateurs', header_cta: true do
+      = render IconButtonComponent.new(title: 'Ajouter', path: new_user_path, icon: 'fas fa-plus')
     .card-body 
       %table.table.table-striped.table-hover.align-middle
         %thead
