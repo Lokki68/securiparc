@@ -16,9 +16,9 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body.d-flex
-    = render partial: 'shared/sidebar'
+    = render 'shared/sidebar'
     %main.main-container
-      = render partial: 'shared/top_header' if current_user
+      = render 'shared/top_header' if current_user
       .container-fluid.py-2.position-relative
         = yield
-        = render partial: 'shared/flash' if flash.any?
+        = render 'shared/flash' if flash.any?

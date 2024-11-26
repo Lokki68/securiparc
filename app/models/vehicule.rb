@@ -8,11 +8,11 @@ class Vehicule < ApplicationRecord
 
   state_machine :status, initial: :enable do
     event :disabled do
-      transition enabled: :enable
+      transition enabled: :disable
     end
 
     event :enabled do
-      transition disable: :disable
+      transition disable: :enable
     end
   end
 end

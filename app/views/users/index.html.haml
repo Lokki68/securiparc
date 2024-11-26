@@ -26,6 +26,6 @@
             %td= sort_link @q, :first_name, t('activerecord.attributes.user.first_name')
             %td= sort_link @q, :last_name, t('activerecord.attributes.user.last_name')
             %td= sort_link @q, :role_name, t('activerecord.attributes.user.role')
-            %td.text-end= t('action.once')
+            %td.text-end= t('action.one')
         %tbody#Users
           != render partial: 'user', collection: @users

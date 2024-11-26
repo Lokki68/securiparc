@@ -1,0 +1,6 @@
+.container-fluid
+  .card.col-lg-6.mx-auto
+    = render 'shared/card/card_header', title: 'Nouveau Véhicule'
+    .card-body 
+      = simple_form_for @vehicule, url: vehicules_path, data: {turbo: false} do |f|
+        != render 'form',  f:f

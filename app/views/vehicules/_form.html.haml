@@ -1,0 +1,9 @@
+.d-flex.flex-column.justify-content-around.align-items-center
+  .d-flex.flex-column 
+    = f.label :name
+    = f.input :name, label: false
+  .d-flex.flex-column
+    = f.input :revision, as: :date, html5: true
+.d-flex.align-items-center.gap-2
+  = link_to 'Annuler', vehicules_path, class: 'btn btn-outline-secondary btn-sm'
+  = f.submit 'Enregistrer', class: 'btn btn-primary btn-sm'

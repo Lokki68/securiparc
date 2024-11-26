@@ -30,5 +30,8 @@
 fr:
   hello: "Bonjour Monde"
   action:
-    once: Action
+    one: Action
     more: Actions
+  date:
+    formats:
+      default: "%d/%m/%Y"
