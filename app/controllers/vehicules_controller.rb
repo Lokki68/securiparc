@@ -1,19 +1,23 @@
 # frozen_string_literal: true
 
 class VehiculesController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   before_action :find_model, except: %w[index new create]
   def index
     @vehicules = Vehicule.all
   end
 
+  def show; end
+
   def new
     @vehicule = Vehicule.new
+    p 'controller_vehicules_new'
   end
 
   def edit; end
 
   def create
+    p 'controller_vehicules_create'
     @vehicule = Vehicule.new permit_params
 
     if @vehicule.save
@@ -51,7 +55,7 @@ class VehiculesController < ApplicationController
   private
 
   def permit_params
-    params.require(:vehicule).permit(%i[name revision])
+    params.require(:vehicule).permit(:name, :revision)
   end
 
   def find_model

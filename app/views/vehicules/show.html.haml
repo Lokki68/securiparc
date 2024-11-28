@@ -1,0 +1,6 @@
+.container-fluid 
+  .card.my-2
+    = render 'shared/card/card_header', title: @vehicule.name, header_cta: true do
+      - if can? :update, @vehicule
+        = render IconButtonComponent.new(title: 'Modifier', path: edit_vehicule_path(@vehicule), icon: 'bi bi-pencil')
+    .card-body

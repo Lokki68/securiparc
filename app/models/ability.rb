@@ -7,7 +7,6 @@ class Ability
     if user.role?('admin')
       can :manage, :all
     elsif user.role?('sapeur')
-      # can :edit, User, id: user.id
       can :update, User, id: user.id
       can :read, :all
     end
