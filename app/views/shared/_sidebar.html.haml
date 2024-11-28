@@ -7,7 +7,7 @@
       %ul.nav.nav-pills.flex-column.mb-auto
         = render NavitemComponent.new(title: 'Tableau de Bord', icon: 'fas fa-tachometer-alt', path: root_path, active: controller_name == 'dashboard')
         = render NavitemComponent.new(title: 'Utilisateurs', icon: 'fas fa-users', path: users_path, active: controller_name == 'users')
-        = render NavitemComponent.new(title: 'Véhicules', icon: 'bi bi-truck', path: vehicules_path, active: controller_name == 'vehicules')
-  %div{class: 'flex items-center justify-center p-4 shadow-inner  mt-auto'}
+  .d-flex.flex-column.align-items-center.justify-content-center.gap-2.mt-auto
     - if current_user
       %p= current_user.full_name
+      = render RoleBadgeComponent.new(role: current_user.role.name)
