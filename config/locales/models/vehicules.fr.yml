@@ -1,0 +1,13 @@
+fr:
+  activerecord:
+    models:
+      vehicule:
+        one: Vehicule
+        other: Veicules
+    attributes:
+      vehicule:
+        id: ID
+        name: Nom
+        revision: Prochaine révision
+        immatriculation3: Immatriculation 3
+        immatriculation4: Immatriculation 4

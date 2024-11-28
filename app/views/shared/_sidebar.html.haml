@@ -1,6 +1,7 @@
-%aside{class: 'd-flex flex-column flex-shrink-0 p-3 text-white bg-dark '}
+%aside{class: 'd-flex flex-column flex-shrink-0 p-3 text-white bg-dark bg-gradient '}
   .py-4.text-gray-500 
-    = link_to 'SecuriParc', root_path, class: 'ml-6 text-lg font-bold text-gray-800'
+    .d-flex.justify-content-center.align-items-center.bg-secondary.bg-gradient.rounded-circle.p-2
+      = image_tag('logo_provisoire.png', alt: 'Logo', width: 100, height: 100, class: 'mx-auto')
 
     %nav.mt-2
       %ul.nav.nav-pills.flex-column.mb-auto

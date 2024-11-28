@@ -1,0 +1,22 @@
+.container-fluid
+  .card.my-2
+    = render 'shared/card/card_header', title: 'Rechercher'
+    - # TODO
+    .card-body
+      Search Form 
+
+  .card.my-2 
+    = render 'shared/card/card_header', title: 'Vehicules', header_cta: true do
+      - if can? :create, Vehicule
+        = render IconButtonComponent.new(title: 'Ajouter', path: new_vehicule_path, icon: 'fas fa-plus')
+    .card-body 
+      %table.table.table-striped.table-hover.align-middle
+        %thead
+          %tr
+            %th= t('activerecord.attributes.vehicule.name')
+            %th= t('activerecord.attributes.vehicule.revision')
+            %th.text-end= t('action.one')
+        %tbody#Vehicules
+          != render partial: 'vehicule', collection: @vehicules
+
+  

@@ -1,0 +1,13 @@
+%tr
+  %td= vehicule.name
+  %td= vehicule.revision.present? && l(vehicule.revision)
+  %td
+    .d-flex.justify-content-end.gap-2
+      - if can? :read, vehicule
+        = render IconButtonComponent.new(title: 'Voir', path: vehicule_path(vehicule), icon: 'bi bi-eye')
+      - if can? :activate, vehicule
+        = render ActiveButtonComponent.new(status: vehicule.status , activate_action: enable_vehicule_path(vehicule) , deactivate_action: disable_vehicule_path(vehicule))
+      - if can? :update, vehicule
+        = render IconButtonComponent.new(title: 'Modifier', path: edit_vehicule_path(vehicule), icon: 'bi bi-pencil')
+      - if can? :destroy, vehicule
+        = render IconButtonComponent.new(title: 'Supprimer', path: vehicule_path(vehicule), icon: 'bi bi-trash text-danger ', delete: true)

@@ -1,15 +1,16 @@
-.card 
-  = render 'shared/card/card_header', title: 'Utilisateur', header_cta: true do
-    - if can? :update, User
-      = render IconButtonComponent.new(title: 'Modifier', path: edit_user_path(@user), icon: 'bi bi-pencil')
-  .card-body
-    %table.table.table-striped.table-hover
-      %tr
-        %th= t('activerecord.attributes.user.first_name')
-        %td= @user.first_name
-      %tr
-        %th= t('activerecord.attributes.user.last_name')
-        %td= @user.last_name
-      %tr
-        %th= t('activerecord.attributes.user.role')
-        %td= @user.role.name
+.container-fluid
+  .card.my-2
+    = render 'shared/card/card_header', title: 'Utilisateur', header_cta: true do
+      - if can? :update, User
+        = render IconButtonComponent.new(title: 'Modifier', path: edit_user_path(@user), icon: 'bi bi-pencil')
+    .card-body
+      %table.table.table-striped.table-hover
+        %tr
+          %th= t('activerecord.attributes.user.first_name')
+          %td= @user.first_name
+        %tr
+          %th= t('activerecord.attributes.user.last_name')
+          %td= @user.last_name
+        %tr
+          %th= t('activerecord.attributes.user.role')
+          %td= @user.role.name

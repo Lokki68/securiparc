@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  resources :vehicules do
+    member do
+      get :enable
+      get :disable
+    end
+  end
+
   resources :users do
     member do
       get :activate
