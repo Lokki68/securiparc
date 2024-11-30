@@ -1,0 +1,11 @@
+fr:
+  activerecord:
+    models:
+      locations:
+        one: Location
+        other: Locations
+    attributes:
+      location:
+        id: ID
+        name: Nom
+        vehicule_id: Vehicule

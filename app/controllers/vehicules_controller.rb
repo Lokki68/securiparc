@@ -55,7 +55,7 @@ class VehiculesController < ApplicationController
   private
 
   def permit_params
-    params.require(:vehicule).permit(:name, :revision)
+    params.require(:vehicule).permit(%i[name revision], location_attributes: %i[name _destroy])
   end
 
   def find_model
