@@ -2,10 +2,18 @@ fr:
   activerecord:
     models:
       locations:
-        one: Location
-        other: Locations
+        one: Emplacement
+        other: Emplacements
     attributes:
       location:
         id: ID
+        localisation: Localisation
         name: Nom
         vehicule_id: Vehicule
+    values:
+      locations:
+        localisations:
+          roof: Toit
+          left_side: Cote gauche
+          right_side: Cote droit
+          inside: Interieur

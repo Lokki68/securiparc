@@ -22,3 +22,4 @@
       .container-fluid.py-2.position-relative
         = yield
         = render 'shared/flash' if flash.any?
+        = turbo_frame_tag 'modal'

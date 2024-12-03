@@ -5,5 +5,5 @@ class Location < ApplicationRecord
   belongs_to :vehicule
 
   validates :name, presence: true
-  validates :min_quantity, numericality: true
+  validates :localisation, presence: true
 end

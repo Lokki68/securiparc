@@ -1,9 +1,10 @@
+
 #locations 
   %table.table.table-striped
     %thead
       %tr
+        %th= t('activerecord.attributes.location.localisation')
         %th= t('activerecord.attributes.location.name')
-        %th= t('activerecord.attributes.location.vehicule_id')
         %th.text-end= t('action.one')
     %tbody
-      != render partial: 'location', collection: locations if local_assigns[:locations].any?
+      != render partial: 'shared/locations/location', collection: locations if local_assigns[:locations].any?

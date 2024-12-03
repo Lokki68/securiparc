@@ -1,0 +1,11 @@
+.d-flex.flex-column.justify-content-around.align-items-center
+  = f.input :vehicule_id, as: :hidden, input_html: { value: params[:id] }
+  .d-flex.flex-column
+    = f.label :name
+    = f.input :name, label: false
+  .d-flex.flex-column
+    = f.label :localisation
+    = f.input :localisation, as: :select, collection: @localisations.map{ |l| t("activerecord.values.locations.localisations.#{l}")}, label: false
+  
+.d-flex.justify-content-end.align-items-center.gap-2
+  = f.submit 'Enregistrer', class: 'btn btn-primary btn-sm'
