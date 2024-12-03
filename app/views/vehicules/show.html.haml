@@ -4,3 +4,12 @@
       - if can? :update, @vehicule
         = render IconButtonComponent.new(title: 'Modifier', path: edit_vehicule_path(@vehicule), icon: 'bi bi-pencil')
     .card-body
+      %p info véhicule
+
+  .card
+    = render 'shared/card/card_header', title: t('activerecord.models.locations.other'), header_cta: true do
+      = render IconButtonComponent.new(title: 'Ajouter', path: new_location_path(@vehicule), icon: 'fas fa-plus', turbo: 'modal' )
+    .card-body
+      .locations 
+        .row 
+          = render 'shared/locations/locations', locations: @vehicule.locations

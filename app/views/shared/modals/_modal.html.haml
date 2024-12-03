@@ -1,0 +1,7 @@
+= turbo_frame_tag 'modal' do
+  .modal{data: {controller: 'modal', action: 'turbo:before-render@document->modal#hideBeforeRender'}}
+    .modal-dialog.modal-dialog-centered{class: modal_size}
+      .modal-content
+        = render 'shared/modals/modal_header', header_icon: header_icon, header_title: header_title
+        .modal-body 
+          = yield

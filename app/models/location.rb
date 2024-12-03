@@ -2,8 +2,8 @@
 
 class Location < ApplicationRecord
   has_many :items
-  belong_to :vehicule
+  belongs_to :vehicule
 
   validates :name, presence: true
-  validates :min_quantity, numericality: true
+  validates :localisation, presence: true
 end
