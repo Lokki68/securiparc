@@ -1,4 +1,3 @@
-// Import and register all your controllers from the importmap via controllers/**/*_controller
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading";
 import { application } from "controllers/application";
 eagerLoadControllersFrom("controllers", application);
@@ -8,3 +7,6 @@ application.register("hideable", Hideable);
 
 import ModalController from "./modal_controller";
 application.register("modal", ModalController);
+
+import CollapseController from "./collapse_controller";
+application.register("collapse", CollapseController);

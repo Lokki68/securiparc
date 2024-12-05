@@ -1,3 +1,5 @@
+= turbo_page_requires_reload
+
 .container-fluid 
   .card.my-2
     = render 'shared/card/card_header', title: @vehicule.name, header_cta: true do
@@ -6,10 +8,10 @@
     .card-body
       %p info véhicule
 
-  .card
-    = render 'shared/card/card_header', title: t('activerecord.models.locations.other'), header_cta: true do
+  .card{data: {controller: 'collapse'}}
+    = render 'shared/card/card_header', title: t('activerecord.models.locations.other'), collapsible: true, start_collapse_icon: 'fa-chevron-right', header_cta: true do
       = render IconButtonComponent.new(title: 'Ajouter', path: new_location_path(@vehicule), icon: 'fas fa-plus', turbo: 'modal' )
-    .card-body
+    .card-body.collapse{data: {'collapse-target': 'content'}}
       .locations 
         .row 
           = render 'shared/locations/locations', locations: @vehicule.locations

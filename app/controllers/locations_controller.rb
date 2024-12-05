@@ -6,8 +6,6 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new permit_params
 
-    debugger
-
     if @location.save
       flash[:success] = 'Emplacement créé'
       redirect_to vehicule_path(@location.vehicule)
