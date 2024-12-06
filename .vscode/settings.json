@@ -6,5 +6,6 @@
     "Hideable",
     "hotwired",
     "vehicule"
-  ]
+  ],
+  "remote.autoForwardPortsFallback": 0
 }
