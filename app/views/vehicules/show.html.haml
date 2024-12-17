@@ -9,9 +9,9 @@
       %p info véhicule
 
   .card{data: {controller: 'collapse'}}
-    = render 'shared/card/card_header', title: t('activerecord.models.locations.other'), collapsible: true, start_collapse_icon: 'fa-chevron-right', header_cta: true do
+    = render 'shared/card/card_header', title: t('activerecord.models.locations.other'), collapsible: true, start_collapse_icon: 'fa-chevron-down', header_cta: true do
       = render IconButtonComponent.new(title: 'Ajouter', path: new_location_path(@vehicule), icon: 'fas fa-plus', turbo: 'modal' )
-    .card-body.collapse{data: {'collapse-target': 'content'}}
+    .card-body{data: {'collapse-target': 'content'}}
       .locations 
         .row 
           = render 'shared/locations/locations', locations: @vehicule.locations

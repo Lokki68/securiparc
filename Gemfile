@@ -43,7 +43,3 @@ end
 group :development do
   gem 'web-console'
 end
-
-gem 'cancancan', '~> 3.6'
-
-gem 'cssbundling-rails', '~> 1.4'
