@@ -1,9 +1,14 @@
 .d-flex.flex-column.justify-content-around.align-items-center
-  .d-flex.flex-column 
+  .d-flex.flex-column
     = f.label :name
     = f.input :name, label: false
   .d-flex.flex-column
-    = f.input :revision, as: :date, html5: true
+    = f.label :registration_number
+    = f.input :registration_number, label: false
+  .d-flex.flex-column
+    = f.input :maintenance_date, as: :date, html5: true
+  .d-flex.flex-column
+    = f.input :technical_inspection, as: :date, html5: true
 
 .d-flex.align-items-center.gap-2
   = link_to 'Annuler', vehicules_path, class: 'btn btn-outline-secondary btn-sm'

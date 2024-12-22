@@ -1,0 +1,22 @@
+fr:
+  activerecord:
+    models:
+      inventories:
+        one: Inventaire
+        other: Inventaires
+    attributes:
+      inventaire:
+        id: ID
+        observation: Observation
+        quantity: Quantité
+        is_present: Présent
+        user_id: Utilisateur
+        localisation_id: Localisation
+        item_id: Matériel
+        vehicule_id: Véhicule
+    values:
+      inventories:
+        is_present:
+          present: Présent
+          no_present: Absent
+          hs: Hors service

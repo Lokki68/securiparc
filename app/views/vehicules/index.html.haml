@@ -14,7 +14,10 @@
         %thead
           %tr
             %th= t('activerecord.attributes.vehicule.name')
-            %th= t('activerecord.attributes.vehicule.revision')
+            %th= t('activerecord.attributes.vehicule.registration_number')
+            %th= t('activerecord.attributes.vehicule.maintenance_date')
+            %th= t('activerecord.attributes.vehicule.technical_inspection')
+            %th= t('last_inventory')
             %th.text-end= t('action.one')
         %tbody#Vehicules
           != render partial: 'vehicule', collection: @vehicules

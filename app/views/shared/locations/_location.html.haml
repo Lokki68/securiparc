@@ -1,4 +1,6 @@
 %tr
-  %td= location.localisation
   %td= location.name
-  %td.text-end= link_to 'Modifier', edit_location_path(location), class: 'btn btn-sm btn-primary'
+  %td
+    .d-flex.justify-content-end.gap-2
+      = render IconButtonComponent.new(title: 'Modifier', path: edit_location_path(location), icon: 'bi bi-pencil', turbo: 'modal')
+      = render IconButtonComponent.new(title: 'Supprimer', path: location_path(location), icon: 'bi bi-trash text-danger', delete: true)

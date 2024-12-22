@@ -1,0 +1,10 @@
+
+#locations 
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= 'Inventory'
+        %th= 'Nom'
+        %th.text-end= t('action.one')
+    %tbody
+      != render partial: 'shared/inventories/inventory', collection: inventories if local_assigns[:inventories].any?

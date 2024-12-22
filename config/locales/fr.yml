@@ -29,6 +29,10 @@
 
 fr:
   hello: "Bonjour Monde"
+  last_inventory: "Dernier inventaire"
+  no_inventory: "Aucun inventaire"
+  no_technical_inspection: "Aucun contröle technique"
+  no_maintenance: "Aucune révision"
   action:
     one: Action
     more: Actions

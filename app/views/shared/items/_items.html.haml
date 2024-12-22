@@ -1,0 +1,9 @@
+#items
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= t('activerecord.attributes.item.name')
+        %th= t('activerecord.attributes.item.min_quantity')
+        %th.text-end= t('action.one')
+    %tbody
+      != render partial: 'shared/items/item', collection: items if local_assigns[:items].any?

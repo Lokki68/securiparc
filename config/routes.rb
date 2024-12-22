@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :vehicules do
     member do
       resources :locations
+      resources :items
+      resources :inventories
       get :enable
       get :disable
     end
