@@ -1,2 +1,3 @@
 - flash.each do |key, value|
-  = render AlertComponent.new(key: key, value: value)
+  %div{data: {controller: 'hideable'}}
+    = render AlertComponent.new(key: key, value: value)
