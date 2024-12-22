@@ -2,16 +2,35 @@
 
 .container-fluid 
   .card.my-2
-    = render 'shared/card/card_header', title: @vehicule.name, header_cta: true do
+    = render 'shared/card/card_header', title: @vehicule.name, subtitle: @vehicule.registration_number,  header_cta: true do
       - if can? :update, @vehicule
         = render IconButtonComponent.new(title: 'Modifier', path: edit_vehicule_path(@vehicule), icon: 'bi bi-pencil')
     .card-body
-      %p info véhicule
+      %h3.fs-3.mb-3 Informations
+      .col
+        %p= "Date dernière révision : #{l(@vehicule.maintenance_date)}"
+        %p= "Date dernier controle technique : #{l(@vehicule.technical_inspection)}"
 
-  .card{data: {controller: 'collapse'}}
+  .card.my-2{data: {controller: 'collapse'}}
     = render 'shared/card/card_header', title: t('activerecord.models.locations.other'), collapsible: true, start_collapse_icon: 'fa-chevron-down', header_cta: true do
-      = render IconButtonComponent.new(title: 'Ajouter', path: new_location_path(@vehicule), icon: 'fas fa-plus', turbo: 'modal' )
+      = render IconButtonComponent.new(title: 'Nouvel Emplacement', path: new_location_path(@vehicule), icon: 'fas fa-plus', turbo: 'modal' )
     .card-body{data: {'collapse-target': 'content'}}
       .locations 
         .row 
           = render 'shared/locations/locations', locations: @vehicule.locations
+
+  .card.my-2{data: {controller: 'collapse'}}
+    = render 'shared/card/card_header', title: t('activerecord.models.items.other'), collapsible: true, start_collapse_icon: 'fa-chevron-down', header_cta: true do
+      = render IconButtonComponent.new(title: 'Nouveau Matériel', path: new_item_path(@vehicule), icon: 'fas fa-plus', turbo: 'modal' )
+    .card-body{data: {'collapse-target': 'content'}}
+      .items
+        .row
+          = render 'shared/items/items', items: @vehicule.items
+
+  .card.my-2{data: {controller: 'collapse'}}
+    = render 'shared/card/card_header', title: t('activerecord.models.inventories.other'), collapsible: true, start_collapse_icon: 'fa-chevron-down', header_cta: true do
+      = render IconButtonComponent.new(title: 'Nouvel Inventaire', path: new_inventory_path(@vehicule), icon: 'fas fa-plus', turbo: 'modal' )
+    .card-body{data: {'collapse-target': 'content'}}
+      .inventories
+        .row
+          = render 'shared/inventories/inventories', inventories: @vehicule.inventories

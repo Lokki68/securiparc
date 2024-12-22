@@ -1,0 +1,14 @@
+fr:
+  activerecord:
+    models:
+      items:
+        one: Matériel
+        other: Matériels
+    attributes:
+      item:
+        id: ID
+        name: Nom
+        min_quantity: Quantité minimale
+        location_id: Emplacement
+#    values:
+#      items:

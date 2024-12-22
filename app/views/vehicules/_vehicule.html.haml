@@ -1,6 +1,21 @@
 %tr
   %td= vehicule.name
-  %td= vehicule.revision.present? && l(vehicule.revision)
+  %td= vehicule.registration_number
+  %td
+    - if vehicule.maintenance_date.present?
+      = l(vehicule.maintenance_date)
+    - else
+      = t('no_maintenance')
+  %td
+    - if vehicule.technical_inspection.present?
+      = l(vehicule.technical_inspection)
+    - else
+      = t('no_technical_inspection')
+  %td
+    - if vehicule.inventories.present?
+      = l(vehicule.inventories.last.created_at)
+    - else
+      = t('no_inventory')
   %td
     .d-flex.justify-content-end.gap-2
       - if can? :read, vehicule

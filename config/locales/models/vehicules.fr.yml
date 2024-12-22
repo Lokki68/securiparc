@@ -3,11 +3,13 @@ fr:
     models:
       vehicule:
         one: Vehicule
-        other: Veicules
+        other: Vehicules
     attributes:
       vehicule:
         id: ID
         name: Nom
-        revision: Prochaine révision
+        registration_number: Immatriculation
+        maintenance_date: Date de révision
+        technical_inspection: Controle technique
         immatriculation3: Immatriculation 3
         immatriculation4: Immatriculation 4

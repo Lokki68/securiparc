@@ -1,0 +1,4 @@
+
+= render 'shared/modals/modal', header_title: 'Modifier emplacement', header_icon: 'fas fa-map-marker-alt', modal_size: 'modal-md' do
+  = simple_form_for @location, url: location_path(@location) do |f|
+    = render 'form', f:f

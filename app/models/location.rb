@@ -5,5 +5,4 @@ class Location < ApplicationRecord
   belongs_to :vehicule
 
   validates :name, presence: true
-  validates :localisation, presence: true
 end

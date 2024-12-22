@@ -10,27 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_30_104517) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_21_095303) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
   end
 
+  create_table "inventories", force: :cascade do |t|
+    t.string "is_present"
+    t.integer "quantity"
+    t.string "observation"
+    t.date "controle_date"
+    t.integer "item_id"
+    t.integer "location_id"
+    t.integer "vehicule_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "min_quatity"
-    t.text "observation"
+    t.integer "min_quantity"
+    t.integer "location_id"
+    t.integer "vehicule_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.integer "vehicule_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "vehicule_id"
-    t.string "localisation"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -58,7 +71,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_30_104517) do
 
   create_table "vehicules", force: :cascade do |t|
     t.string "name"
-    t.date "revision"
+    t.string "registration_number"
+    t.date "maintenance_date"
+    t.date "technical_inspection"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

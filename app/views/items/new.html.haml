@@ -1,0 +1,3 @@
+= render 'shared/modals/modal', header_title: 'Ajouter un article', header_icon: 'fas fa-box', modal_size: 'modal-md' do
+  = simple_form_for @item, url: items_path do |f|
+    = render 'form', f:f

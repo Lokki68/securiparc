@@ -5,6 +5,7 @@ class Vehicule < ApplicationRecord
   accepts_nested_attributes_for :locations, reject_if: :all_blank, allow_destroy: true
 
   has_many :items, through: :locations
+  has_many :inventories
 
   validates :name, presence: true
 

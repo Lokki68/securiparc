@@ -1,0 +1,14 @@
+.d-flex.flex-column.justify-content-around.align-items-center
+  = f.input :vehicule_id, as: :hidden, input_html: { value: params[:id] }
+  .d-flex.flex-column
+    = f.label :name
+    = f.input :name, label: false
+  .d-flex.flex-column
+    = f.label :min_quantity
+    = f.input :min_quantity, as: :numeric, input_html: {min: 0}, label: false
+  .d-flex.flex-column
+    = f.label :location_id
+    = f.input :location_id, as: :select, collection: @locations.map{|location| [location.name, location.id] },  label: false
+
+  .d-flex.justify-content-end.align-items-center.gap-2
+    = f.submit 'Enregistrer', class: 'btn btn-primary btn-sm'
