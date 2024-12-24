@@ -1,0 +1,14 @@
+.card
+  .card-header.text-white.bg-opacity-50{class: @header_bg}
+    .d-flex.justify-content-between
+      %p= @vehicule.name
+      %p= @vehicule.registration_number
+  .card-body
+    .d-flex.flex-column
+      %p= "#{t('last_inventory')} :"
+      %p.ms-2= @vehicule.inventories.last.created_at if @vehicule.inventories.present?
+      %p.ms-2= t('no_inventory') unless @vehicule.inventories.present?
+  .card-footer
+    .d-flex.justify-content-end.align-items-center.gap-2
+      = render IconButtonComponent.new(title: 'Voir', path: vehicule_path(@vehicule), icon: 'bi bi-eye')
+      = render IconButtonComponent.new(title: 'Inventaire', path: new_inventory_path(id: @vehicule.id), icon: 'bi bi-card-checklist')

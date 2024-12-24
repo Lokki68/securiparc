@@ -5,7 +5,6 @@ class VehiculesController < ApplicationController
   before_action :init_variables
   before_action :find_model, except: %w[index new create]
 
-
   def index
     @vehicules = Vehicule.all
   end
