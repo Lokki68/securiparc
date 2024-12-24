@@ -8,8 +8,8 @@
     .card-body
       %h3.fs-3.mb-3 Informations
       .col
-        %p= "Date dernière révision : #{l(@vehicule.maintenance_date)}"
-        %p= "Date dernier controle technique : #{l(@vehicule.technical_inspection)}"
+        %p= "Date dernière révision : #{l(@vehicule.maintenance_date)}" if @vehicule.maintenance_date
+        %p= "Date dernier controle technique : #{l(@vehicule.technical_inspection)}" if @vehicule.technical_inspection
 
   .card.my-2{data: {controller: 'collapse'}}
     = render 'shared/card/card_header', title: t('activerecord.models.locations.other'), collapsible: true, start_collapse_icon: 'fa-chevron-down', header_cta: true do

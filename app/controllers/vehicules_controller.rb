@@ -2,7 +2,9 @@
 
 class VehiculesController < ApplicationController
   # load_and_authorize_resource
+  before_action :init_variables
   before_action :find_model, except: %w[index new create]
+
   def index
     @vehicules = Vehicule.all
   end
@@ -17,7 +19,6 @@ class VehiculesController < ApplicationController
   def edit; end
 
   def create
-    p 'controller_vehicules_create'
     @vehicule = Vehicule.new permit_params
 
     if @vehicule.save
@@ -54,8 +55,12 @@ class VehiculesController < ApplicationController
 
   private
 
+  def init_variables
+    @vehicule_types = %w[suap inc div]
+  end
+
   def permit_params
-    params.require(:vehicule).permit(%i[name registration_number maintenance_date technical_inspection], location_attributes: %i[name _destroy])
+    params.require(:vehicule).permit(%i[name vehicule_type registration_number maintenance_date technical_inspection], location_attributes: %i[name _destroy])
   end
 
   def find_model

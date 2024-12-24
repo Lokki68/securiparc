@@ -1,5 +1,6 @@
 %tr
   %td= vehicule.name
+  %td.text-center= render VehiculeTypeBadgeComponent.new(vehicule_type: vehicule.vehicule_type)
   %td= vehicule.registration_number
   %td
     - if vehicule.maintenance_date.present?

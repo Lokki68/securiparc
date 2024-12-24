@@ -1,1 +1,8 @@
-%p Dashboard
+.container-fluid
+  .card.my-2
+    = render 'shared/card/card_header', title: 'Dashboard'
+    .card-body
+      .row
+        - @vehicules.each do |vehicule|
+          .col-4
+            = render VehiculeCardComponent.new(vehicule: vehicule)
