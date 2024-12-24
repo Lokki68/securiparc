@@ -3,6 +3,9 @@
     = f.label :name
     = f.input :name, label: false
   .d-flex.flex-column
+    = f.label :vehicule_type
+    = f.input :vehicule_type, as: :select, collection: @vehicule_types.map{|vehicule_type| [t("activerecord.values.vehicule.vehicule_types.#{vehicule_type}"), vehicule_type]}, label: false
+  .d-flex.flex-column
     = f.label :registration_number
     = f.input :registration_number, label: false
   .d-flex.flex-column

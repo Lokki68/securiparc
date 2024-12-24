@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class DashboardController < ApplicationController
-  def index; end
+  def index
+    @vehicules = Vehicule.all
+  end
 end

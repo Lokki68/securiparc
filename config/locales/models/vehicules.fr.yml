@@ -8,8 +8,15 @@ fr:
       vehicule:
         id: ID
         name: Nom
+        vehicule_type: Type
         registration_number: Immatriculation
         maintenance_date: Date de révision
         technical_inspection: Controle technique
         immatriculation3: Immatriculation 3
         immatriculation4: Immatriculation 4
+    values:
+      vehicule:
+        vehicule_types:
+          suap: Secours à personne
+          inc: Incendie
+          div: Opération Diverse
